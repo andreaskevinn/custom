@@ -1,0 +1,25 @@
+<odoo noupdate="0">
+    <!--noupdate 1 buat create record diawal-->
+    <record id="sequence_idea_idea_seq" model="ir.sequence">
+        <field name="name">Idea sequence</field>
+        <field name="code">idea.idea</field>
+        <field name="prefix">Test/%(range_year)s/</field>
+<!--        <field eval untuk number-->
+        <field eval="3" name="padding"/>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="False" name="company_id"/>
+        <field eval="True" name="use_date_range"/>
+    </record>
+    <record id="sequence_idea_voting_seq" model="ir.sequence">
+        <field name="name">Idea voting sequence</field>
+        <field name="code">idea.voting</field>
+        <field name="prefix">Vote/</field>
+<!--        <field eval untuk number-->
+        <field eval="3" name="padding"/>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="False" name="company_id"/>
+<!--        <field eval="True" name="use_date_range"/>-->
+    </record>
+</odoo>

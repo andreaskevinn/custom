@@ -1,0 +1,96 @@
+<odoo>
+    <record id="peminjaman_view_form" model="ir.ui.view">
+        <field name="name">peminjaman.view.form</field>
+        <field name="model">perpustakaan.peminjaman</field>
+        <field name="arch" type="xml">
+            <form string="Peminjaman form">
+                <header>
+                    <button name="action_dipinjam" string="Dipinjam" states="draft" type="object" class="btn-primary"/>
+                    <button name="action_selesai" string="Selesai" states="dipinjam" type="object" class="btn-primary"/>
+                    <button name="action_settodraft" string="Set to Draft" states="canceled, dipinjam" type="object"
+                            class="btn-primary"/>
+                    <button name="action_canceled" string="Cancel" states="voted" type="object" class="btn-primary"
+                            groups="sales_team.group_sale_manager"/>
+<!--                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>-->
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="id_peminjaman"/>
+                            <field name="admin_id"/>
+                            <field name="anggota_id"/>
+                            <field name="buku_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="state"/>
+                            <field name="datepredenda"/>
+                            <field name="date2"/>
+                            <field name="tot_denda"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="peminjaman_view_list" model="ir.ui.view">
+        <field name="name">peminjaman.view.list</field>
+        <field name="model">perpustakaan.peminjaman</field>
+        <field name="arch" type="xml">
+            <tree string="Peminjaman list">
+                <field name="id_peminjaman"/>
+                <field name="admin_id"/>
+                <field name="anggota_id"/>
+                <field name="buku_id"/>
+                <field name="date"/>
+                <field name="state"/>
+                <field name="datepredenda"/>
+                <field name="date2"/>
+                <field name="tot_denda"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="peminjaman_view_search" model="ir.ui.view">
+        <field name="name">peminjaman.view.search</field>
+        <field name="model">perpustakaan.peminjaman</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="id_peminjaman"/>
+                <field name="admin_id"/>
+                <field name="anggota_id"/>
+                <field name="buku_id"/>
+                <field name="date"/>
+                <field name="state"/>
+                <field name="datepredenda"/>
+                <field name="date2"/>
+                <field name="tot_denda"/>
+                <filter string="Draft" name="draft_filter" domain="[('state', '=', 'draft')]"/>
+                <filter string="Confirmed" name="confirmed_filter" domain="[('state', '=', 'confirmed')]"/>
+                <separator/>
+                <!--<filter string="Score>10" name="score10_filter" domain="[('score', '>', 10)]"/>-->
+
+                <group string="Group By..." expand="0" name="groupby">
+                    <filter string="State" name="by_state" context="{'group_by': 'state'}"/>
+                    <filter string="Date" name="by_date" context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="peminjaman_action" model="ir.actions.act_window">
+        <field name="name">peminjaman</field>
+        <field name="res_model">perpustakaan.peminjaman</field>
+        <field name="view_id" ref="peminjaman_view_list"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="peminjaman_mmenu3" parent="perpustakaan.anggota_mmenu" name="Peminjaman"
+              action="peminjaman_action" sequence="30"/>
+
+
+</odoo>

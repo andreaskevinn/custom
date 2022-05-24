@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_perpustakaan_user","Access perpustakaan for User Sales","model_perpustakaan_anggota","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_perpustakaan_admin","Access perpustakaan for Admin","model_perpustakaan_anggota","sales_team.group_sale_manager",1,1,1,1,
+"access_buku_user","Access buku for User Sales","model_perpustakaan_buku","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_buku_admin","Access buku for Admin","model_perpustakaan_buku","sales_team.group_sale_manager",1,1,1,1,
+"access_peminjaman_user","Access peminjaman for User Sales","model_perpustakaan_peminjaman","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_peminjaman_admin","Access peminjaman for Admin","model_perpustakaan_peminjaman","sales_team.group_sale_manager",1,1,1,1,
