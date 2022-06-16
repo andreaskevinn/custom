@@ -1,0 +1,32 @@
+<odoo>
+    <record id="wiz_pemesanan_view_form" model="ir.ui.view">
+        <field name="name">wiz.pemesanan.view.form</field>
+        <field name="model">wiz.ekspedisi.pemesanan</field>
+        <field name="arch" type="xml">
+            <form string="Pemesanan Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="pemesanan_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Nilai" name="ekspedisi_pemesanan">
+                            <field name="line_ids">
+                                <tree create="0" delete="0" editable="bottom">
+                                    <field name="karyawan_id" readonly="1"/>
+                                    <field name="ref_pemesanan_lines_id" invisible="1"/>
+                                    <field name="grade"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                 <footer>
+                        <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" data-hotkey="c"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                 </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

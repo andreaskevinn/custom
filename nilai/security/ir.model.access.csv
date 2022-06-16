@@ -7,8 +7,10 @@
 "access_khs_admin","Access KHS for Admin","model_nilai_khs","sales_team.group_sale_manager",1,1,1,1
 "access_kelas_user","Access Kelas for User Sales","model_nilai_kelas","sales_team.group_sale_salesman_all_leads",1,1,1,0
 "access_kelas_admin","Access Kelas for Admin","model_nilai_kelas","sales_team.group_sale_manager",1,1,1,1
+
 "access_kelas_lines_user","Access Kelas_lines for User Sales","model_nilai_kelas_lines","sales_team.group_sale_salesman_all_leads",1,1,1,0
 "access_kelas_lines_admin","Access Kelas_lines for Admin","model_nilai_kelas_lines","sales_team.group_sale_manager",1,1,1,1
+
 "access_wizkelas_user","Access Kelas for User Sales","model_wiz_nilai_kelas","sales_team.group_sale_salesman_all_leads",1,1,1,0
 "access_wizkelas_admin","Access Kelas for Admin","model_wiz_nilai_kelas","sales_team.group_sale_manager",1,1,1,1
 

@@ -1,0 +1,130 @@
+<odoo>
+    <record id="customer_view_form" model="ir.ui.view">
+        <field name="name">customer.view.form</field>
+        <field name="model">ekspedisi.customer</field>
+        <field name="arch" type="xml">
+            <form string="customer form">
+                <header>
+                    <button name="action_confirmed" string="Confirm" states="draft" type="object" class="btn-primary"/>
+                    <button name="action_settodraft" string="Set to Draft" type="object" class="btn-primary"/>
+                    <button name="action_canceled" string="Cancel" states="confirmed, done" type="object"
+                            class="btn-primary" groups="sales_team.group_sale_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="id_customer"/>
+                            <field name="namaperusahaan"/>
+                            <field name="notelpperusahaan"/>
+                            <field name="alamat"/>
+                        </group>
+                        <group>
+                            <!--namaperusahaan notelpperusahaan alamat namacp jabatancp notelpcp emailcp-->
+                            <field name="namacp"/>
+                            <field name="jabatancp"/>
+                            <field name="notelpcp"/>
+                            <field name="emailcp"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Pemesanan" name="pemesanan">
+                            <field name="pesan_ids" readonly="1">
+                                <tree>
+                                    <field name="id"/>
+                                    <field name="biayapengiriman"/>
+                                    <field name="karyawan_id"/>
+                                    <field name="kendaraan_id"/>
+                                    <field name="jenisbarang_id"/>
+                                    <field name="jumlahmuatan"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="customer_view_list" model="ir.ui.view">
+    <field name="name">customer.view.form</field>
+    <field name="model">ekspedisi.customer</field>
+    <field name="arch" type="xml">
+        <tree string="customer list">
+            <field name="id_customer"/>
+            <field name="namaperusahaan"/>
+            <field name="notelpperusahaan"/>
+            <field name="alamat"/>
+            <field name="namacp"/>
+            <field name="jabatancp"/>
+            <field name="notelpcp"/>
+            <field name="emailcp"/>
+        </tree>
+    </field>
+    </record>
+
+    <record id="customer_view_kanban" model="ir.ui.view">
+        <field name="name">customer.view.form</field>
+        <field name="model">ekspedisi.customer</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id_customer"/>
+                <field name="namaperusahaan"/>
+                <field name="notelpperusahaan"/>
+                <field name="alamat"/>
+                <field name="namacp"/>
+                <field name="jabatancp"/>
+                <field name="notelpcp"/>
+                <field name="emailcp"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+<!--                                    <field name="display_name"/>-->
+                                </strong>
+                                <ul>
+<!--                                    <li t-if="record.date.raw_value">-->
+<!--                                        <field name="date"/>-->
+<!--                                    </li>-->
+<!--                                    <li t-if="record.score.raw_value">-->
+<!--                                        <field name="score"/>-->
+<!--                                    </li>-->
+                                    <li t-if="record.state.raw_value">
+<!--                                        <field name="state"/>-->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="customer_action" model="ir.actions.act_window">
+        <field name="name">Customer</field>
+        <field name="res_model">ekspedisi.customer</field>
+        <field name="view_id" ref="customer_view_list"/>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem id="ekspedisi_menu" name="Ekspedisi" sequence="10"/>
+
+    <menuitem id="customer_mmenu" parent="ekspedisi.ekspedisi_menu" name="Menu"
+              action="customer_action" sequence="10"/>
+    <menuitem id="customer_mmenu2" parent="ekspedisi.customer_mmenu" name="Customer"
+              action="customer_action" sequence="10"/>
+
+<!--    <menuitem id="exercise_menu" name="Exercise"-->
+<!--              sequence="10"/>-->
+
+<!--    <menuitem id="idea_mmenu" parent="idea.exercise_menu" name="Idea"-->
+<!--              action="idea_action" sequence="10"/>-->
+
+<!--    <menuitem id="idea_mmenu2" parent="idea.idea_mmenu" name="Idea2"-->
+<!--              action="idea_action" sequence="10"/>-->
+
+<!--    <menuitem id="idea_mmenu2" parent="idea.idea_mmenu" name="Idea2"-->
+<!--              action="idea_action" sequence="10"/>-->
+</odoo>

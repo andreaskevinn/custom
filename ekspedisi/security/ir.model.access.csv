@@ -1,0 +1,33 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_customer_user","Access Customer for User Sales","model_ekspedisi_customer","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_customer_admin","Access Customer for Admin","model_ekspedisi_customer","sales_team.group_sale_manager",1,1,1,1,
+
+"access_gudang_user","Access Gudang for User Sales","model_ekspedisi_gudang","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_gudang_admin","Access Gudang for Admin","model_ekspedisi_gudang","sales_team.group_sale_manager",1,1,1,1,
+
+"access_jenisbarang_user","Access Jenis Barang for User Sales","model_ekspedisi_jenisbarang","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_jenisbarang_admin","Access Jenis Barang for Admin","model_ekspedisi_jenisbarang","sales_team.group_sale_manager",1,1,1,1,
+
+"access_karyawan_user","Access Karyawan for User Sales","model_ekspedisi_karyawan","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_karyawan_admin","Access Karyawan for Admin","model_ekspedisi_karyawan","sales_team.group_sale_manager",1,1,1,1,
+
+"access_kendaraan_user","Access Kendaraan for User Sales","model_ekspedisi_kendaraan","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_kendaraan_admin","Access Kendaraan for Admin","model_ekspedisi_kendaraan","sales_team.group_sale_manager",1,1,1,1,
+
+"access_pemesanan_user","Access Pemesanan for User Sales","model_ekspedisi_pemesanan","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_pemesanan_admin","Access Pemesanan for Admin","model_ekspedisi_pemesanan","sales_team.group_sale_manager",1,1,1,1,
+
+"access_pengambilan_user","Access Pengambilan for User Sales","model_ekspedisi_pengambilan","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_pengambilan_admin","Access Pengambilan for Admin","model_ekspedisi_pengambilan","sales_team.group_sale_manager",1,1,1,1,
+
+"access_vendor_user","Access Vendor for User Sales","model_ekspedisi_vendor","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_vendor_admin","Access Vendor for Admin","model_ekspedisi_vendor","sales_team.group_sale_manager",1,1,1,1,
+
+"access_pemesanan_lines_user","Access Pemesanan_lines for User Sales","model_ekspedisi_pemesanan_lines","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_pemesanan_lines_admin","Access Pemesanan_lines for Admin","model_ekspedisi_pemesanan_lines","sales_team.group_sale_manager",1,1,1,1
+
+"access_wizpemesanan_user","Access Pemesanan for User Sales","model_wiz_ekspedisi_pemesanan","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_wizpemesanan_admin","Access Pemesanan for Admin","model_wiz_ekspedisi_pemesanan","sales_team.group_sale_manager",1,1,1,1
+
+"access_pemesanan_lines_wiz_user","Access Pemesanan_lines for User Sales","model_wiz_ekspedisi_pemesanan_lines","sales_team.group_sale_salesman_all_leads",1,1,1,1
+"access_pemesanan_lines_wiz_admin","Access Pemesanan_lines for Admin","model_wiz_ekspedisi_pemesanan_lines","sales_team.group_sale_manager",1,1,1,1

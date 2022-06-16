@@ -1,0 +1,90 @@
+<odoo>
+    <record id="kendaraan_view_form" model="ir.ui.view">
+        <field name="name">kendaraan.view.form</field>
+        <field name="model">ekspedisi.kendaraan</field>
+        <field name="arch" type="xml">
+            <form string="kendaraan form">
+                <header>
+                    <button name="action_confirmed" string="Confirm" states="draft" type="object" class="btn-primary"/>
+                    <button name="action_settodraft" string="Set to Draft" type="object" class="btn-primary"/>
+                    <button name="action_canceled" string="Cancel" states="confirmed, done" type="object"
+                            class="btn-primary" groups="sales_team.group_sale_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                </header>
+                <sheet>
+                    <!--nomorpolisi, merkkendaraan, jeniskendaraan, tanggalbelikendaraan-->
+                    <group>
+                        <group>
+                            <field name="nomorpolisi"/>
+                            <field name="merkkendaraan"/>
+                            <field name="jeniskendaraan"/>
+                            <field name="tanggalbelikendaraan"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="kendaraan_view_list" model="ir.ui.view">
+    <field name="name">kendaraan.view.form</field>
+    <field name="model">ekspedisi.kendaraan</field>
+    <field name="arch" type="xml">
+        <tree string="karyawan list">
+            <field name="nomorpolisi"/>
+            <field name="merkkendaraan"/>
+            <field name="jeniskendaraan"/>
+            <field name="tanggalbelikendaraan"/>
+        </tree>
+    </field>
+    </record>
+
+    <record id="kendaraan_view_kanban" model="ir.ui.view">
+        <field name="name">kendaraan.view.form</field>
+        <field name="model">ekspedisi.kendaraan</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="nomorpolisi"/>
+                <field name="merkkendaraan"/>
+                <field name="jeniskendaraan"/>
+                <field name="tanggalbelikendaraan"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+<!--                                    <field name="display_name"/>-->
+                                </strong>
+                                <ul>
+<!--                                    <li t-if="record.date.raw_value">-->
+<!--                                        <field name="date"/>-->
+<!--                                    </li>-->
+<!--                                    <li t-if="record.score.raw_value">-->
+<!--                                        <field name="score"/>-->
+<!--                                    </li>-->
+                                    <li t-if="record.state.raw_value">
+<!--                                        <field name="state"/>-->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="kendaraan_action" model="ir.actions.act_window">
+        <field name="name">Kendaraan</field>
+        <field name="res_model">ekspedisi.kendaraan</field>
+        <field name="view_id" ref="kendaraan_view_list"/>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem id="kendaraan_mmenu2" parent="ekspedisi.customer_mmenu" name="Kendaraan"
+              action="kendaraan_action" sequence="50"/>
+
+<!--    <menuitem id="gudang_mmenu" parent="ekspedisi_menu" name="Gudang"-->
+<!--              action="gudang_action" sequence="=20"/>-->
+
+</odoo>
